@@ -7,14 +7,16 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import globalStyles from './styles/globalStyles';
 
 // components
-import Home from './src/components/Home/Home';
+import Day1 from './src/components/Day1/Day1';
 import Day2 from './src/components/Day2/Day2';
+import Day3 from './src/components/Day3/Day3';
 
 const App = () => {
   return (
     <View style={globalStyles.container}>
-      {/* <Home/> */}
-      <Day2/>
+      {/* <Day1/> */}
+      {/* <Day2/> */}
+      <Day3/>
     </View>
   );
 };
