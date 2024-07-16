@@ -13,7 +13,9 @@ import Day2 from './src/screens/Day2/Day2';
 import Day3 from './src/screens/Day3/Day3';
 import Day4 from './src/screens/Day4/Day4';
 import Day5 from './src/screens/Day5/Day5';
-import RetailScreen from './src/screens/RetailScreen/RetailScreen.jsx'
+import Day6 from './src/screens/Day6/Day6.jsx';
+
+import RetailScreen from './src/screens/RetailScreen/screens/RetailScreen.jsx'
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -29,6 +31,7 @@ const App = () => {
         <Stack.Screen name="Day3Screen" component={Day3} />      
         <Stack.Screen name="Day4Screen" component={Day4} />    
         <Stack.Screen name='Day5Screen' component={Day5}/>
+        <Stack.Screen name='Day6Screen' component={Day6}/>
         <Stack.Screen name="RetailScreen" component={RetailScreen}/>
       </Stack.Navigator>
     </NavigationContainer>

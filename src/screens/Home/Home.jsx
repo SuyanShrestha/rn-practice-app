@@ -41,6 +41,12 @@ const Home = ({navigation}) => {
         onPress={() => navigation.navigate('RetailScreen')}>
         <Text>Retail Screen</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day6Screen')}>
+        <Text>Day 6</Text>
+      </TouchableOpacity>
     </View>
   );
 };
