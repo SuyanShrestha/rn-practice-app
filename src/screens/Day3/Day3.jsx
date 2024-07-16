@@ -18,7 +18,7 @@ import {
   DrawerLayoutAndroid
 } from 'react-native';
 
-import globalStyles from '../../../styles/globalStyles';
+import globalStyles from '../../styles/globalStyles';
 // import PaginationExample from './PaginationExample';
 
 const Day3 = () => {

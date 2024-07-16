@@ -13,7 +13,7 @@ import {
   SectionList,
 } from 'react-native';
 
-import globalStyles from '../../../styles/globalStyles';
+import globalStyles from '../../styles/globalStyles';
 
 const Day2 = () => {
   // for text inputs
