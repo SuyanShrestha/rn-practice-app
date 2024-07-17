@@ -180,12 +180,21 @@ const Day6 = () => {
 
   // LINKING
 
-  const handleYouTube = async () => {
-    const url = 'https://www.bajratechnologies.com';
+  // canOpenURL and openURL
+  const handleBrowser = async url => {
     const isSupported = await Linking.canOpenURL(url);
-    console.warn(isSupported)
+    console.warn(isSupported);
     Linking.openURL(url);
   };
+
+  const expoDocsUrl = 'https://docs.expo.dev/guides/linking/';
+  const youtubeWebUrl = "https://www.youtube.com/watch?v=BBJa32lCaaY";
+  const youtubeAppUrl = "vnd.youtube://BBJa32lCaaY"; 
+
+  // settings open
+  const openSettingsURL = async () => {
+    Linking.openSettings();
+  }
 
   return (
     <ScrollView contentContainerStyle={globalStyles.container}>
@@ -292,11 +301,37 @@ const Day6 = () => {
       </View>
 
       {/* LINKING */}
-      <ScrollView style={[globalStyles.mainDiv, {backgroundColor: 'skyblue', minHeight: 100}]}>
+      <ScrollView
+        style={[
+          globalStyles.mainDiv,
+          {backgroundColor: 'skyblue', minHeight: 100},
+        ]}>
+        {/* true webURL */}
         <TouchableOpacity
           style={globalStyles.gotoButton}
-          onPress={handleYouTube}>
-          <Text>Open Youtube</Text>
+          onPress={() => handleBrowser(expoDocsUrl)}>
+          <Text>Open Link to Expo Docs</Text>
+        </TouchableOpacity>
+
+        {/* youtube web url, but returns false due to app */}
+        <TouchableOpacity
+          style={globalStyles.gotoButton}
+          onPress={() => handleBrowser(youtubeWebUrl)}>
+          <Text>Open Link to Youtube Web</Text>
+        </TouchableOpacity>
+
+        {/* youtube app url direct */}
+        <TouchableOpacity
+          style={globalStyles.gotoButton}
+          onPress={() => handleBrowser(youtubeAppUrl)}>
+          <Text>Open Link to Youtube App</Text>
+        </TouchableOpacity>
+
+        {/* open settings */}
+        <TouchableOpacity
+          style={globalStyles.gotoButton}
+          onPress={openSettingsURL}>
+          <Text>Open Settings of this app</Text>
         </TouchableOpacity>
       </ScrollView>
     </ScrollView>
