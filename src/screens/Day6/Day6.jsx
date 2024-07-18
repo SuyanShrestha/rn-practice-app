@@ -188,13 +188,13 @@ const Day6 = () => {
   };
 
   const expoDocsUrl = 'https://docs.expo.dev/guides/linking/';
-  const youtubeWebUrl = "https://www.youtube.com/watch?v=BBJa32lCaaY";
-  const youtubeAppUrl = "vnd.youtube://BBJa32lCaaY"; 
+  const youtubeWebUrl = 'https://www.youtube.com/watch?v=BBJa32lCaaY';
+  const youtubeAppUrl = 'vnd.youtube://BBJa32lCaaY';
 
   // settings open
   const openSettingsURL = async () => {
     Linking.openSettings();
-  }
+  };
 
   return (
     <ScrollView contentContainerStyle={globalStyles.container}>

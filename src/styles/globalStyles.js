@@ -8,6 +8,8 @@ export default StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     minHeight: '100vh',
+    // height: 300,
+    flexGrow: 1,
   },
   innerContainer: {
     display: 'flex',
