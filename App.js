@@ -15,6 +15,8 @@ import Day4 from './src/screens/Day4/Day4';
 import Day5 from './src/screens/Day5/Day5';
 import Day6 from './src/screens/Day6/Day6';
 import Day7 from './src/screens/Day7/Day7';
+import Day8 from './src/screens/Day8/Day8';
+
 
 import RetailScreen from './src/screens/RetailScreen/screens/RetailScreen.jsx';
 
@@ -48,6 +50,8 @@ const App = () => {
         {/* for deep link */}
         <Stack.Screen name="Profile" component={ProfileDeepLink} initialParams={{id: 0}}/>
         <Stack.Screen name="Settings" component={SettingsDeepLink} />
+
+        <Stack.Screen name="Day8Screen" component={Day8} />
 
 
         <Stack.Screen name="RetailScreen" component={RetailScreen} />

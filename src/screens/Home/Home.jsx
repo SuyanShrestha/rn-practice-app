@@ -53,6 +53,12 @@ const Home = ({navigation}) => {
         onPress={() => navigation.navigate('Day7Screen')}>
         <Text>Day 7</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day8Screen')}>
+        <Text>Day 8</Text>
+      </TouchableOpacity>
     </View>
   );
 };
