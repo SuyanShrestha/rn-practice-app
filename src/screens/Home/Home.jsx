@@ -1,10 +1,10 @@
-import {View, Text, Touchable, TouchableOpacity} from 'react-native';
+import {View, Text, Touchable, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import globalStyles from '../../styles/globalStyles';
 
 const Home = ({navigation}) => {
   return (
-    <View style={globalStyles.container}>
+    <ScrollView style={globalStyles.innerContainer}>
       <Text>Home</Text>
       <TouchableOpacity
         style={globalStyles.gotoButton}
@@ -59,7 +59,18 @@ const Home = ({navigation}) => {
         onPress={() => navigation.navigate('Day8Screen')}>
         <Text>Day 8</Text>
       </TouchableOpacity>
-    </View>
+
+
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+      <Text>ah</Text>
+
+    </ScrollView>
   );
 };
 

@@ -2,7 +2,7 @@ import {View, Text, StyleSheet, Button} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 
 import MapView from 'react-native-maps';
-import {Marker, Heatmap} from 'react-native-maps';
+import {Marker, Heatmap, Polygon, Circle, Polyline} from 'react-native-maps';
 
 import globalStyles from '../../styles/globalStyles';
 
@@ -10,10 +10,10 @@ const Day8 = () => {
   const mapRef = useRef(null);
 
   const INITIAL_REGION = {
-    latitude: 27.7043,
-    longitude:  85.3075,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitude: 27.6863,
+    longitude: 85.2415,
+    latitudeDelta: 0.0122,
+    longitudeDelta: 0.0121,
   };
 
   const [region, setRegion] = useState({
@@ -61,7 +61,47 @@ const Day8 = () => {
     {latitude: 27.7068, longitude: 85.3254, weight: 1},
     {latitude: 27.7069, longitude: 85.3255, weight: 2},
     {latitude: 27.707, longitude: 85.3256, weight: 3},
+    {latitude: 27.7071, longitude: 85.3257, weight: 4},
+    {latitude: 27.7072, longitude: 85.3258, weight: 5},
+    {latitude: 27.7073, longitude: 85.3259, weight: 6},
+    {latitude: 27.7074, longitude: 85.326, weight: 7},
+    {latitude: 27.7075, longitude: 85.3261, weight: 8},
+    {latitude: 27.7076, longitude: 85.3262, weight: 9},
+    {latitude: 27.7077, longitude: 85.3263, weight: 10},
   ];
+
+  // for polygon
+  const polygonCoordinates = [
+    {latitude: 27.6858, longitude: 85.2405},
+    {latitude: 27.6862, longitude: 85.2415},
+    {latitude: 27.6859, longitude: 85.242},
+    {latitude: 27.6864, longitude: 85.2425},
+    {latitude: 27.6857, longitude: 85.243},
+    {latitude: 27.6855, longitude: 85.2422},
+    {latitude: 27.685, longitude: 85.2418},
+    {latitude: 27.6853, longitude: 85.2408},
+    {latitude: 27.6858, longitude: 85.2405}, // Closing the polygon
+  ];
+
+  // for circle
+  const circleCenter = {
+    latitude: 27.687,
+    longitude: 85.243,
+  };
+
+  // for polyline
+  const [isDashed, setIsDashed] = useState(false);
+
+  const polylineCoordinates = [
+    {latitude: 27.6858, longitude: 85.2405},
+    {latitude: 27.708, longitude: 85.3157},
+    {latitude: 27.7068, longitude: 85.3254},
+  ];
+
+  const handleDashedPress = () => {
+    setIsDashed(!isDashed);
+    console.warn('Dashed');
+  }
 
   return (
     <View style={{flex: 1}}>
@@ -71,7 +111,7 @@ const Day8 = () => {
         // region={region}
         onRegionChangeComplete={area => setRegion(area)}
         ref={mapRef}
-        mapType="satellite"
+        mapType="hybrid"
         // zoomEnabled={false}
         loadingEnabled={true}>
         {/* PRACTICING MARKERS */}
@@ -108,7 +148,38 @@ const Day8 = () => {
           }}
         />
 
+        {/* polygon */}
+        <Polygon
+          coordinates={polygonCoordinates}
+          strokeColor="black"
+          fillColor="rgba(255,0,0,0.5)"
+          strokeWidth={5}
+          tappable={true}
+          onPress={() => console.warn('Polygon 1 got pressed.')}
+          lineCap="butt"
+        />
 
+        {/* circle */}
+        <Circle
+          center={circleCenter}
+          radius={1000}
+          strokeColor="#000"
+          fillColor="rgba(255,0,255,0.2)"
+          strokeWidth={2}
+          zIndex={-1}
+          tappable={true}
+          onPress= {() => console.warn('circle got pressed')}
+        />
+
+        {/* Polyline */}
+        <Polyline
+          coordinates={polylineCoordinates}
+          strokeColor="#000" 
+          strokeWidth={5}
+          lineDashPattern={isDashed ? [200, 50] : null}
+          tappable={true}
+          onPress={() => handleDashedPress}
+        />
       </MapView>
       <View>
         <Button

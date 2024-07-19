@@ -14,6 +14,8 @@ export default StyleSheet.create({
   innerContainer: {
     display: 'flex',
     gap: 20,
+    backgroundColor: 'purple',
+    color: 'black'
   },
   mainDiv: {
     borderRadius: 10,

@@ -52,6 +52,7 @@ const App = () => {
         <Stack.Screen name="Settings" component={SettingsDeepLink} />
 
         <Stack.Screen name="Day8Screen" component={Day8} />
+        <Stack.Screen name="Day9Screen" component={Day9} />
 
 
         <Stack.Screen name="RetailScreen" component={RetailScreen} />
