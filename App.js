@@ -16,6 +16,7 @@ import Day5 from './src/screens/Day5/Day5';
 import Day6 from './src/screens/Day6/Day6';
 import Day7 from './src/screens/Day7/Day7';
 import Day8 from './src/screens/Day8/Day8';
+import Day9 from './src/screens/Day9/Day9';
 
 
 import RetailScreen from './src/screens/RetailScreen/screens/RetailScreen.jsx';
@@ -27,6 +28,7 @@ import Day7Remain from './src/components/Day7Remain/Day7Remain';
 import linking from './src/global/linking.js';
 import ProfileDeepLink from './src/components/DeepLinkPractice/ProfileDeepLink.jsx';
 import SettingsDeepLink from './src/components/DeepLinkPractice/SettingsDeepLink.jsx';
+import Day9Map from './src/components/Day9Map/Day9Map.jsx';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -53,6 +55,7 @@ const App = () => {
 
         <Stack.Screen name="Day8Screen" component={Day8} />
         <Stack.Screen name="Day9Screen" component={Day9} />
+        <Stack.Screen name="Day9MapScreen" component={Day9Map}/>
 
 
         <Stack.Screen name="RetailScreen" component={RetailScreen} />

@@ -8,9 +8,9 @@ const Day9 = ({navigation}) => {
 
       <TouchableOpacity
         style={globalStyles.gotoButton}
-        onPress={() => Linking.openURL("https://www.youtube.com/watch?v=3r-qDvD3F3c")}
+        onPress={() => navigation.navigate("Day9MapScreen")}
         >
-        <Text>Normal Linking</Text>
+        <Text>Day9 Maps</Text>
       </TouchableOpacity>
 
       <TouchableOpacity

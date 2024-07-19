@@ -60,6 +60,11 @@ const Home = ({navigation}) => {
         <Text>Day 8</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day9Screen')}>
+        <Text>Day 9</Text>
+      </TouchableOpacity>
 
       <Text>ah</Text>
       <Text>ah</Text>
