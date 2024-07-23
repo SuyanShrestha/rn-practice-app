@@ -15,8 +15,8 @@ const Day9 = ({navigation}) => {
 
       <TouchableOpacity
         style={globalStyles.gotoButton}
-        onPress={() => navigation.navigate('Day7RemainScreen')}>
-        <Text>Day 7 remains</Text>
+        onPress={() => navigation.navigate('Day9ReduxToolkitScreen')}>
+        <Text>Day9ReduxToolkit</Text>
       </TouchableOpacity>
     </View>
   );

@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import {StyleSheet} from 'react-native';
+import ThemeContext from '../context/ThemeContext';
 
 export default StyleSheet.create({
   container: {
@@ -14,8 +16,7 @@ export default StyleSheet.create({
   innerContainer: {
     display: 'flex',
     gap: 20,
-    // backgroundColor: 'purple',
-    // color: 'black'
+    
   },
   mainDiv: {
     borderRadius: 10,

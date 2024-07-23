@@ -2,9 +2,14 @@ import {View, Text, Touchable, TouchableOpacity, ScrollView} from 'react-native'
 import React from 'react';
 import globalStyles from '../../styles/globalStyles';
 
+import useThemeStyles from '../../hooks/useThemeStyles';
+
 const Home = ({navigation}) => {
+
+  const themeStyles = useThemeStyles();
+
   return (
-    <ScrollView style={globalStyles.innerContainer}>
+    <ScrollView style={[globalStyles.innerContainer, themeStyles.innerContainer]}>
       <Text>Home</Text>
       <TouchableOpacity
         style={globalStyles.gotoButton}
@@ -66,15 +71,18 @@ const Home = ({navigation}) => {
         <Text>Day 9</Text>
       </TouchableOpacity>
 
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
-      <Text>ah</Text>
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day9ThemingScreen')}>
+        <Text>Change theme - Day 9</Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day10Screen')}>
+        <Text>Day 10</Text>
+      </TouchableOpacity>
+      
     </ScrollView>
   );
 };
