@@ -43,6 +43,7 @@ import { store } from './src/redux/store.js';
 import { Provider } from 'react-redux';
 import Day9ReduxChild from './src/styles/components/Day9ReduxChild/Day9ReduxChild.jsx';
 import UseMemoExample1 from './src/components/UseMemoExample1/UseMemoExample1.jsx';
+import Day11 from './src/screens/Day11/Day11.jsx';
 
 
 
@@ -82,6 +83,9 @@ const App = () => {
             <Stack.Screen name="ReactMemoComponent" component={ReactMemo} />
             <Stack.Screen name="ReactMemo2Component" component={ReactMemo2} />
             <Stack.Screen name="UseMemoExample1Component" component={UseMemoExample1} />
+
+            {/* day11 */}
+            <Stack.Screen name="Day11Screen" component={Day11} />
 
             <Stack.Screen name="RetailScreen" component={RetailScreen} />
           </Stack.Navigator>
