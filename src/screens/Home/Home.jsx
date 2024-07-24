@@ -94,6 +94,12 @@ const Home = ({navigation}) => {
         onPress={() => navigation.navigate('Day11Screen')}>
         <Text>Day 11</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day12Screen')}>
+        <Text>Day 12</Text>
+      </TouchableOpacity>
       
     </ScrollView>
   );

@@ -6,6 +6,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import globalStyles from './src/styles/globalStyles';
 
+import { I18nextProvider } from 'react-i18next';
+import i18next from './src/services/i18next';
+
+
 // screens
 import Home from './src/screens/Home/Home';
 import Day1 from './src/screens/Day1/Day1';
@@ -44,6 +48,10 @@ import { Provider } from 'react-redux';
 import Day9ReduxChild from './src/styles/components/Day9ReduxChild/Day9ReduxChild.jsx';
 import UseMemoExample1 from './src/components/UseMemoExample1/UseMemoExample1.jsx';
 import Day11 from './src/screens/Day11/Day11.jsx';
+import Day12 from './src/screens/Day12/Day12.jsx';
+import MemoryLeak from './src/components/MemoryLeak/MemoryLeak.jsx';
+import RNLocalize from './src/components/RNLocalize/RNLocalize.jsx';
+import LanguageChanger from './src/components/LanguageChanger/LanguageChanger.jsx';
 
 
 
@@ -51,47 +59,50 @@ const App = () => {
   const Stack = createNativeStackNavigator();
 
   return (
-    <Provider store={store}>
-      <ThemeProvider>
-        <NavigationContainer linking={linking}>
-          <Stack.Navigator
-            initialRouteName="HomeScreen"
-            screenOptions={{headerShown: false}}>
-            <Stack.Screen name="HomeScreen" component={Home} />
-            <Stack.Screen name="Day1Screen" component={Day1} />
-            <Stack.Screen name="Day2Screen" component={Day2} />
-            <Stack.Screen name="Day3Screen" component={Day3} />
-            <Stack.Screen name="Day4Screen" component={Day4} />
-            <Stack.Screen name="Day5Screen" component={Day5} />
-            <Stack.Screen name="Day6Screen" component={Day6} />
-            <Stack.Screen name="Day7Screen" component={Day7} />
-            <Stack.Screen name="Day7RemainScreen" component={Day7Remain} />
-            {/* for deep link */}
-            <Stack.Screen name="Profile" component={ProfileDeepLink} initialParams={{id: 0}}/>
-            <Stack.Screen name="Settings" component={SettingsDeepLink} />
-            <Stack.Screen name="Day8Screen" component={Day8} />
-
-            {/* day9 */}
-            <Stack.Screen name="Day9Screen" component={Day9} />
-            <Stack.Screen name="Day9MapScreen" component={Day9Map}/>
-            <Stack.Screen name="Day9ThemingScreen" component={Day9Theming}/>
-            <Stack.Screen name="Day9ReduxToolkitScreen" component={Day9ReduxToolkit}/>
-            <Stack.Screen name="Day9ReduxChildScreen"component={Day9ReduxChild}/>
-
-            {/* day10 */}
-            <Stack.Screen name="Day10Screen" component={Day10} />
-            <Stack.Screen name="ReactMemoComponent" component={ReactMemo} />
-            <Stack.Screen name="ReactMemo2Component" component={ReactMemo2} />
-            <Stack.Screen name="UseMemoExample1Component" component={UseMemoExample1} />
-
-            {/* day11 */}
-            <Stack.Screen name="Day11Screen" component={Day11} />
-
-            <Stack.Screen name="RetailScreen" component={RetailScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </ThemeProvider>
-    </Provider>
+    <I18nextProvider i18n={i18next}>
+      <Provider store={store}>
+        <ThemeProvider>
+          <NavigationContainer linking={linking}>
+            <Stack.Navigator
+              initialRouteName="HomeScreen"
+              screenOptions={{headerShown: false}}>
+              <Stack.Screen name="HomeScreen" component={Home} />
+              <Stack.Screen name="Day1Screen" component={Day1} />
+              <Stack.Screen name="Day2Screen" component={Day2} />
+              <Stack.Screen name="Day3Screen" component={Day3} />
+              <Stack.Screen name="Day4Screen" component={Day4} />
+              <Stack.Screen name="Day5Screen" component={Day5} />
+              <Stack.Screen name="Day6Screen" component={Day6} />
+              <Stack.Screen name="Day7Screen" component={Day7} />
+              <Stack.Screen name="Day7RemainScreen" component={Day7Remain} />
+              {/* for deep link */}
+              <Stack.Screen name="Profile" component={ProfileDeepLink} initialParams={{id: 0}}/>
+              <Stack.Screen name="Settings" component={SettingsDeepLink} />
+              <Stack.Screen name="Day8Screen" component={Day8} />
+              {/* day9 */}
+              <Stack.Screen name="Day9Screen" component={Day9} />
+              <Stack.Screen name="Day9MapScreen" component={Day9Map}/>
+              <Stack.Screen name="Day9ThemingScreen" component={Day9Theming}/>
+              <Stack.Screen name="Day9ReduxToolkitScreen" component={Day9ReduxToolkit}/>
+              <Stack.Screen name="Day9ReduxChildScreen"component={Day9ReduxChild}/>
+              {/* day10 */}
+              <Stack.Screen name="Day10Screen" component={Day10} />
+              <Stack.Screen name="ReactMemoComponent" component={ReactMemo} />
+              <Stack.Screen name="ReactMemo2Component" component={ReactMemo2} />
+              <Stack.Screen name="UseMemoExample1Component" component={UseMemoExample1} />
+              {/* day11 */}
+              <Stack.Screen name="Day11Screen" component={Day11} />
+              {/* day12 */}
+              <Stack.Screen name="Day12Screen" component={Day12} />
+              <Stack.Screen name="MemoryLeak" component={MemoryLeak} />
+              <Stack.Screen name="RNLocalize" component={RNLocalize} />
+              <Stack.Screen name="LanguageChanger" component={LanguageChanger} />
+              <Stack.Screen name="RetailScreen" component={RetailScreen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </ThemeProvider>
+      </Provider>
+    </I18nextProvider>
   );
 };
 
