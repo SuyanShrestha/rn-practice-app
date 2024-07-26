@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "45094803963",
+    "project_id": "rn-bajra-awesomeproj",
+    "storage_bucket": "rn-bajra-awesomeproj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45094803963:android:6d606fa0079cfbca80d35e",
+        "android_client_info": {
+          "package_name": "com.awesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45094803963-9o0f73vb6ijgscvqcgci9vjloomi4sg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuSF26bE6yaoMa5XMMqtUsyYown1WYPos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45094803963-9o0f73vb6ijgscvqcgci9vjloomi4sg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

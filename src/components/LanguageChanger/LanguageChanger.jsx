@@ -13,7 +13,7 @@ import i18next, {languageResources} from '../../services/i18next';
 import {useTranslation} from 'react-i18next';
 import languageList from '../../services/languageList';
 
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../../styles/components/LanguageChanger/LanguageChanger';
 
 const LanguageChanger = () => {
@@ -30,7 +30,7 @@ const LanguageChanger = () => {
     loadLanguage();
   }, [i18n]);
 
-  const changeLng = async lng => {
+  const changeLng = async lng => {  
     await AsyncStorage.setItem('language', lng);
     i18next.changeLanguage(lng);
     setVisible(false);
