@@ -112,6 +112,18 @@ const Home = ({navigation}) => {
         onPress={() => navigation.navigate('Day14Screen')}>
         <Text>Day 14</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day17Screen')}>
+        <Text>Day 17-19</Text>
+      </TouchableOpacity>
+      
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('Day20Screen')}>
+        <Text>Day 20</Text>
+      </TouchableOpacity>
       
     </ScrollView>
   );

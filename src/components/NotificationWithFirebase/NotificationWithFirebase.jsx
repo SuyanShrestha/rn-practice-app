@@ -19,9 +19,10 @@ const NotificationWithFirebase = () => {
   }
 
   useEffect(() => {
-    console.log('bac')
+    console.log('bac');
     requestUserPermission();
   }, []);
+  
   return (
     <View>
       <Text>NotificationWithFirebase</Text>

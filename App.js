@@ -54,6 +54,12 @@ import MemoryLeak from './src/components/MemoryLeak/MemoryLeak.jsx';
 import RNLocalize from './src/components/RNLocalize/RNLocalize.jsx';
 import LanguageChanger from './src/components/LanguageChanger/LanguageChanger.jsx';
 import LocalNotificationNotifee from './src/components/LocalNotificationNotifee/LocalNotificationNotifee.jsx';
+import Day17 from './src/screens/Day17/Day17.jsx';
+import Day17BoxAnimation from './src/components/Day17BoxAnimation/Day17BoxAnimation.jsx';
+import Day18LayoutAnimations from './src/components/Day18LayoutAnimations/Day18LayoutAnimations.jsx';
+import Day20 from './src/screens/Day20/Day20.jsx';
+import Bargraph from './src/components/Bargraph/Bargraph.jsx';
+import SignInScreen from './src/components/SignInScreen/SignInScreen.jsx';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -129,6 +135,30 @@ const App = () => {
               {/* day14 */}
               <Stack.Screen name="Day14Screen" component={Day14} />
 
+              {/* day17 */}
+              <Stack.Screen name="Day17Screen" component={Day17} />
+              <Stack.Screen
+                name="Day17BoxAnimationScreen"
+                component={Day17BoxAnimation}
+              />
+              <Stack.Screen
+                name="LayoutAnimationScreen"
+                component={Day18LayoutAnimations}
+              />
+
+              {/* day20 and 21 */}
+              <Stack.Screen
+                name="Day20Screen"
+                component={Day20}
+              />
+              <Stack.Screen
+                name="BargraphScreen"
+                component={Bargraph}
+              />
+               <Stack.Screen
+                name="SignInScreen"
+                component={SignInScreen}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </ThemeProvider>
