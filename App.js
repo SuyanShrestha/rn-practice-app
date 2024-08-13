@@ -60,6 +60,12 @@ import Day18LayoutAnimations from './src/components/Day18LayoutAnimations/Day18L
 import Day20 from './src/screens/Day20/Day20.jsx';
 import Bargraph from './src/components/Bargraph/Bargraph.jsx';
 import SignInScreen from './src/components/SignInScreen/SignInScreen.jsx';
+import VictoryChartExample1 from './src/components/DatePickerComponent/DatePickerComponent.jsx';
+import DatePicker from 'react-native-date-picker';
+import DatePickerComponent from './src/components/DatePickerComponent/DatePickerComponent.jsx';
+import Day21 from './src/screens/Day21/Day21.jsx';
+import ProfileScreen from './src/components/ProfileScreen/ProfileScreen.jsx';
+import EditProfileScreen from './src/components/ProfileScreen/EditProfileScreen.jsx';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -147,17 +153,20 @@ const App = () => {
               />
 
               {/* day20 and 21 */}
+              <Stack.Screen name="Day20Screen" component={Day20} />
+              <Stack.Screen name="BargraphScreen" component={Bargraph} />
+              <Stack.Screen name="SignInScreen" component={SignInScreen} />
               <Stack.Screen
-                name="Day20Screen"
-                component={Day20}
+                name="DatePickerScreen"
+                component={DatePickerComponent}
               />
+
+              {/* day22 */}
+              <Stack.Screen name="Day21Screen" component={Day21} />
+              <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
               <Stack.Screen
-                name="BargraphScreen"
-                component={Bargraph}
-              />
-               <Stack.Screen
-                name="SignInScreen"
-                component={SignInScreen}
+                name="EditProfileScreen"
+                component={EditProfileScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>

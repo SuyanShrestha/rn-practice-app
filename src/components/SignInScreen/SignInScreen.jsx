@@ -4,12 +4,10 @@ import {authentication} from '../../../config';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {signInWithEmailAndPassword} from 'firebase/auth';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const [errMsg, setErrMsg] = useState('');
 
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
@@ -28,7 +26,7 @@ const LoginScreen = () => {
       })
       .catch(err => alert(err));
   };
-
+ 
   const signOutUser = () => {
     authentication.signOut();
     setIsSignedIn(false);
@@ -36,12 +34,18 @@ const LoginScreen = () => {
 
   if (isSignedIn) {
     return (
-    <View>
-      <Text>Logged In</Text>
-      <Button onPress={signOutUser} title='Sign out'/>
-    </View>
-  
-  );
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 10,
+        }}>
+        <Text>Logged In</Text>
+        <Button title='User Profile' onPress={() => navigation.navigate("ProfileScreen")}/>
+        <Button onPress={signOutUser} title="Sign out" />
+      </View>
+    );
   }
 
   return (

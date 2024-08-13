@@ -18,6 +18,12 @@ const Day20 = ({navigation}) => {
         onPress={() => navigation.navigate('SignInScreen')}>
         <Text>Firebase</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={globalStyles.gotoButton}
+        onPress={() => navigation.navigate('DatePickerScreen')}>
+        <Text>DatePickerScreen</Text>
+      </TouchableOpacity>
     </View>
   )
 }
