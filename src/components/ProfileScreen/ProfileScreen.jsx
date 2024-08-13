@@ -7,9 +7,43 @@ import {
   SafeAreaView,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+
+import {firebase, authentication} from '../../../config';
+import {onAuthStateChanged, signOut} from 'firebase/auth';
 
 const ProfileScreen = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(authentication, currentUser => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const signOutUser = () => {
+    signOut(authentication)
+      .then(() => {
+        setUser(null);
+        navigation.navigate('LoginScreen');
+      })
+      .catch(error => console.warn(error));
+  };
+
+  // fetching match history
+  //   const fetchMatchHistory = async () => {
+  //     try {
+  //       const list = [];
+  //       await firebase
+  //         .firestore()
+  //         .collection(matches)
+  //         .where('userId', '==', user.uid).orderBy("matchTime", "desc").get();
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
       <ScrollView
@@ -40,16 +74,16 @@ const ProfileScreen = () => {
         {/* lower section */}
         <View style={styles.userInfoWrapper}>
           <View style={styles.userInfoItem}>
+            <Text style={styles.userInfoTitle}>22</Text>
+            <Text style={styles.userInfoSubTitle}>Matches</Text>
+          </View>
+          <View style={styles.userInfoItem}>
             <Text style={styles.userInfoTitle}>44.7</Text>
             <Text style={styles.userInfoSubTitle}>Stars</Text>
           </View>
           <View style={styles.userInfoItem}>
-            <Text style={styles.userInfoTitle}>22</Text>
-            <Text style={styles.userInfoSubTitle}>Followers</Text>
-          </View>
-          <View style={styles.userInfoItem}>
-            <Text style={styles.userInfoTitle}>13</Text>
-            <Text style={styles.userInfoSubTitle}>Following</Text>
+            <Text style={styles.userInfoTitle}>72%</Text>
+            <Text style={styles.userInfoSubTitle}>Winrate</Text>
           </View>
         </View>
       </ScrollView>
